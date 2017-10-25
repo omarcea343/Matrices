@@ -3,6 +3,7 @@
 #include <time.h>
 #define fil 2
 #define col 2
+#define rn 8
 
 int main(){
 	
@@ -17,10 +18,14 @@ int main(){
 	scanf("%c",&respuesta1);
 	
 	if (respuesta1 == 'r' || respuesta1 == 'R'){
-		int min, max;
-		int random1 = min + rand() / (RAND_MAX / (max - min + 1) + 1);
-		printf("%d", random1);
-		
+		int min = 0, max = 10;
+		for(i = 1; i <= 8; i++){
+			for(j = 1; j <= 8; j++){
+				int random1 = min + rand() / (RAND_MAX / (max - min + 1) + 1);
+				matriz[i][j] = random1;
+				printf("Valor para [%d][%d] ", i, j);
+			}
+		}		
 	}
 	else{
 		printf("Ingrese los valores para la primer matriz: \n");
