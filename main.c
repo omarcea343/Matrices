@@ -63,7 +63,7 @@ int main(){
 		printf("\n");
 	}
 	
-	printf("Para realizar una suma digite una S o si es resta cualquier letra. \n");
+	printf("Para realizar una suma digite una S o si es resta diagonal D, si es resta cualquier letra. \n");
 	scanf("%c",&respuesta2);
 	
 	if (respuesta2 == 's' || respuesta2 == 'S'){
@@ -72,6 +72,18 @@ int main(){
 			for(j = 0; j < fil; j++){
 				matriz2[i][j] = matriz[i][j] + matriz1[i][j];
 				printf("\t%d",matriz2[i][j]);
+			}
+			printf("\t\t\n\n");
+		}
+	}
+	else if(respuesta2 == 'd' || respuesta2 == 'D'){
+		printf("\n El resultado de la resta diagonal de ambas matrices es:\n\n");
+		for(i = 0; i < col ; i++){
+			for(j = 0; j < fil; j++){
+				if(i = j){
+					matriz2[i][j] = matriz[i][j] - matriz1[i][j];
+					printf("\t%d",matriz2[i][j]);
+				}
 			}
 			printf("\t\t\n\n");
 		}
